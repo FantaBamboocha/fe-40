@@ -7,14 +7,15 @@ const arrayOfLetters = ["A", "b", "C", "d", "E"];
 
 const changeRegisterByFor = (letters) => {
   if (!Array.isArray(letters)) return;
+
   const changedArrayOfLetters = [];
+
   for (let i = 0; i < letters.length; i++) {
     const letter = letters[i];
+
     letter === letter.toUpperCase()
       ? changedArrayOfLetters.push(letter.toLowerCase())
       : changedArrayOfLetters.push(letter.toUpperCase());
-    // пришлось записывать push в каждое выражение, т.к., если в тернарнике получать только изменненный регистр,
-    // а после этого пушить, то в масив попадает регистр букв без изменений
   }
   return changedArrayOfLetters;
 };
@@ -23,10 +24,13 @@ console.log(changeRegisterByFor(arrayOfLetters));
 
 const changeRegisterByWhile = (letters) => {
   if (!Array.isArray(letters)) return;
+
   const changedArrayOfLetters = [];
   let i = 0;
+
   while (letters[i]) {
     const letter = letters[i];
+
     letter === letter.toUpperCase()
       ? changedArrayOfLetters.push(letter.toLowerCase())
       : changedArrayOfLetters.push(letter.toUpperCase());
@@ -39,7 +43,9 @@ console.log(changeRegisterByWhile(arrayOfLetters));
 
 const changeRegisterByForEach = (letters) => {
   if (!Array.isArray(letters)) return;
+
   const changedArrayOfLetters = [];
+
   letters.forEach((letter) => {
     letter === letter.toUpperCase()
       ? changedArrayOfLetters.push(letter.toLowerCase())
@@ -52,6 +58,7 @@ console.log(changeRegisterByForEach(arrayOfLetters));
 
 const changeRegisterByMap = (letters) => {
   if (!Array.isArray(letters)) return;
+
   return letters.map((letter) => {
     return letter === letter.toUpperCase()
       ? letter.toLowerCase()

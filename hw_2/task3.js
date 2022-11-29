@@ -9,9 +9,12 @@ const arrayOfNumbers = [1, 2, 3, 4, 5];
 
 const getDetailsByFor = (numbers) => {
   if (!Array.isArray(numbers)) return;
+
   const detailedArray = [];
+
   for (let i = 0; i < numbers.length; i++) {
     const number = numbers[i];
+
     detailedArray.push(
       `Value: ${number}; Index: ${i}; Squared: ${number ** 2}`
     );
@@ -23,10 +26,13 @@ console.log(getDetailsByFor(arrayOfNumbers));
 
 const getDetailsByWhile = (numbers) => {
   if (!Array.isArray(numbers)) return;
+
   const detailedArray = [];
   let i = 0;
+
   while (numbers[i]) {
     const number = numbers[i];
+
     detailedArray.push(
       `Value: ${number}; Index: ${i}; Squared: ${number ** 2}`
     );
@@ -39,7 +45,9 @@ console.log(getDetailsByWhile(arrayOfNumbers));
 
 const getDetailsByForEach = (numbers) => {
   if (!Array.isArray(numbers)) return;
+
   const detailedArray = [];
+
   numbers.forEach((number, index) => {
     detailedArray.push(
       `Value: ${number}; Index: ${index}; Squared: ${number ** 2}`
@@ -52,9 +60,11 @@ console.log(getDetailsByForEach(arrayOfNumbers));
 
 const getDetailsByMap = (numbers) => {
   if (!Array.isArray(numbers)) return;
-  return numbers.map((number, index) => {
-    return `Value: ${number}; Index: ${index}; Squared: ${number ** 2}`;
-  });
+
+  return numbers.map(
+    (number, index) =>
+      `Value: ${number}; Index: ${index}; Squared: ${number ** 2}`
+  );
 };
 
 console.log(getDetailsByMap(arrayOfNumbers));
