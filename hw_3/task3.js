@@ -13,10 +13,7 @@ const userList = [
   { id: 3, name: "Slavik" },
 ];
 
-const removeUsers = (users, idArray) => {
-  return users.filter(({ id }) => {
-    return !idArray.includes(id);
-  });
-};
+const removeUsers = (users, idArray) =>
+  users.filter(({ id }) => !idArray.includes(id));
 
 console.log(removeUsers(userList, [1, 3]));

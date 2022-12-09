@@ -50,21 +50,16 @@ const userList = [
 ];
 
 const convertToObject = (users) => {
-  const changeUsersName = users.map(
-    ({ id, first_name, last_name, email, gender, ip_address }) => {
-      return {
-        id,
+  return users.reduce(
+    (result, { first_name, last_name, gender, ...rest }) => {
+      const userToPush = {
         fullName: `${first_name} ${last_name}`,
-        email,
-        gender,
-        ip_address,
+        ...rest,
       };
-    }
-  );
+      const isMan = gender === "Male";
+      const userGender = isMan ? "men" : "women";
 
-  return changeUsersName.reduce(
-    (result, user) => {
-      user.gender === "Male" ? result.men.push(user) : result.women.push(user);
+      result[userGender].push(userToPush);
 
       return result;
     },

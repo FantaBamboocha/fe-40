@@ -6,12 +6,9 @@
 
 const toCapitalizeByMap = (words) => {
   return words.map((word) => {
-    const lowerCaseWord = word.toLowerCase();
     const firstUpperLetter = word[0].toUpperCase();
-    const capitalizeWord = lowerCaseWord.replace(
-      lowerCaseWord[0],
-      firstUpperLetter
-    );
+    const lowerCaseWord = word.slice(1).toLowerCase();
+    const capitalizeWord = firstUpperLetter + lowerCaseWord;
 
     return capitalizeWord;
   });
@@ -33,8 +30,8 @@ const toCapitalizeByReduce = (words) => {
 };
 
 console.log(
-  toCapitalizeByMap(["hello", "wOrLd", "jAvAsRipT", "TEACHmeSKILLS"])
+  toCapitalizeByMap(["hello", "wOrLd", "jAvAscRipT", "TEACHmeSKILLS"])
 );
 console.log(
-  toCapitalizeByReduce(["hello", "wOrLd", "jAvAsRipT", "TEACHmeSKILLS"])
+  toCapitalizeByReduce(["hello", "wOrLd", "jAvAscRipT", "TEACHmeSKILLS"])
 );

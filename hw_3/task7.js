@@ -39,17 +39,11 @@ const newReleases = [
 ];
 
 const getIdsByRating = (videos) => {
-  const filterArray = videos.filter(({ rating }) => {
-    return rating[0] === 5.0;
-  });
-
-  const getIds = filterArray.reduce((result, { id }) => {
-    result.push(id);
+  return videos.reduce((result, { id, rating }) => {
+    rating[0] === 5 && result.push(id);
 
     return result;
   }, []);
-
-  return getIds;
 };
 
 console.log(getIdsByRating(newReleases));
