@@ -5,7 +5,12 @@
 
 // fn(‘Hello’, 3) // ‘Hel…’
 
-const shortString = (someString, symbols) =>
-  someString.slice(0, symbols) + "...";
+const shortString = (someString, symbols) => {
+  if (someString.length > symbols) {
+    return someString.slice(0, symbols) + "...";
+  }
 
-console.log(shortString("Написать функцию, которая принимает строку", 22));
+  return someString;
+};
+
+console.log(shortString("Написать функцию, которая принимает строку", 40));

@@ -1,6 +1,6 @@
 "use strict";
 
-/* С помощью функции map, reduce вывести url объекта, у которого самая большая площадь */
+/* С помощью функции reduce вывести url объекта, у которого самая большая площадь */
 
 const boxarts = [
   {
@@ -24,25 +24,6 @@ const boxarts = [
     url: "http://api.netflix.com/catalog/titles/movies/00000000",
   },
 ];
-
-const getUrlByMap = (items) => {
-  const objectsWithArea = items.map(({ width, height, url }) => {
-    const objectWithArea = {
-      area: width * height,
-      url,
-    };
-
-    return objectWithArea;
-  });
-
-  const sortedArray = objectsWithArea.sort(
-    ({ area: previousArea }, { area: nextArea }) => nextArea - previousArea
-  );
-
-  return sortedArray[0].url;
-};
-
-console.log(getUrlByMap(boxarts));
 
 const getUrlByReduce = (items) => {
   const ObjectWithMaxArea = items.reduce((result, currentObject) => {
