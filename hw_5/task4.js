@@ -17,8 +17,6 @@ const getPairQuantity = (arrayOfGloves) => {
   const glovesQuantity = Object.values(glovesCollection);
 
   return glovesQuantity.reduce((pairQuantity, quantity) => {
-    if (quantity < 2) return pairQuantity;
-
     pairQuantity += Math.floor(quantity / 2);
 
     return pairQuantity;

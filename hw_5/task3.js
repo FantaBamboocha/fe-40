@@ -2,24 +2,21 @@
 
 /* Create a function that takes a Roman numeral as its argument and return its value as a numeric decimal integer */
 
-/* I had to get to know debugger while doing this task and the task with factorial */
-
 const convertRomanToInteger = (romanString) => {
   const romanNumbers = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
   let integer = 0;
 
-  for (let i = romanString.length - 1; i >= 0; i--) {
+  for (let i = 0; i < romanString.length; i++) {
     const current = romanString[i];
-    const next = romanString[i - 1];
+    const next = romanString[i + 1];
 
-    if (!next) {
-      integer += romanNumbers[current];
-    } else if (romanNumbers[current] > romanNumbers[next]) {
-      integer += romanNumbers[current] - romanNumbers[next];
-      i--;
+    const currentNumber = romanNumbers[current];
+    const nextNumber = romanNumbers[next];
+
+    if (currentNumber < nextNumber) {
+      integer -= currentNumber;
     } else {
-      integer += romanNumbers[current] + romanNumbers[next];
-      i--;
+      integer += currentNumber;
     }
   }
 
