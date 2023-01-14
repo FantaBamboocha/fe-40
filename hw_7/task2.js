@@ -10,11 +10,11 @@ const USERS_REQUEST = "https://jsonplaceholder.typicode.com/users";
 
 const getData = async () => {
   try {
-    const postsListRequest = await fetch(POSTS_REQUEST).then((response) =>
+    const postsListRequest = fetch(POSTS_REQUEST).then((response) =>
       response.json()
     );
 
-    const usersListRequest = await fetch(USERS_REQUEST).then((response) =>
+    const usersListRequest = fetch(USERS_REQUEST).then((response) =>
       response.json()
     );
 

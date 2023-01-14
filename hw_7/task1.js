@@ -14,9 +14,10 @@ chunk(['a', 'b', 'c', 'd'], 3);
 
 const splitArray = (someArray, chunkSize) => {
   const splittedArray = [];
+  const someArrayCopy = someArray.slice(0);
 
-  while (someArray.length !== 0) {
-    const groupedElements = someArray.splice(0, chunkSize);
+  while (someArrayCopy.length !== 0) {
+    const groupedElements = someArrayCopy.splice(0, chunkSize);
 
     splittedArray.push(groupedElements);
   }
