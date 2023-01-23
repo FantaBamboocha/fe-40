@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.play-container {
+  display: flex;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.play-сontainer__button {
+  margin: 100px auto;
+  padding: 50px;
+  display: block;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.multiplayer-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.multiplayer-container__button {
+  display: block;
+  margin: 100px auto;
+}
+
+.difficulty-options {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 50%;
+}
